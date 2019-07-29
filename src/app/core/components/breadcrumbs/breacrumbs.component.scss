@@ -1,0 +1,25 @@
+@import "~src/styles";
+
+.fluid-bread {
+  background-color: transparent;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 0 16px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    color: mat-color($primary);
+  }
+}
+.bar {
+  color: rgba(60, 60, 60, 0.8);
+}

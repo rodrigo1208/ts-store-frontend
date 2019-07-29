@@ -1,0 +1,19 @@
+<div class="mat-elevation-z3" style="
+width: 100%; background-color: #fff; line-height: 60px">
+  <span class="mat-title" style="margin-left: 20px">Filtros</span>
+  <span style="float: right; margin-right: 20px;">
+    <button mat-icon-button (click)="changeShowFilter()">
+      <fa-icon icon="filter"></fa-icon>
+    </button>
+  </span>
+  <div [style.padding]="'0 20px'" [@openClose]="showFilter ? 'open' : 'close'">
+    <form [formGroup]="formGroup">
+      <dynamic-material-form class="row" [group]="formGroup" [model]="formModel"></dynamic-material-form>
+
+      <div style="margin: 10px 0">
+        <button mat-raised-button class="op-btn" (click)="filter()">Filtrar</button>
+        <button mat-flat-button class="op-btn">Limpar filtros</button>
+      </div>
+    </form>
+  </div>
+</div>

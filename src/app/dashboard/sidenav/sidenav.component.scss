@@ -1,0 +1,56 @@
+@import "~src/styles";
+
+:host {
+  position: relative;
+  height: 100%;
+  width: 100px;
+  background-color: mat-color($accent);
+}
+
+.sidenav-logo {
+  width: 100%;
+  height: 100px;
+  display: flex;
+
+  .logo {
+    display: inline-block;
+    margin: auto;
+  }
+}
+
+.sidenav-buttons {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 100%;
+  margin: 10px auto;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: mat-color($accent, 800);
+  }
+}
+
+.logout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+
+.sidenav-background {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  bottom: 0;
+  width: 50px;
+  background-color: mat-color($accent);
+}

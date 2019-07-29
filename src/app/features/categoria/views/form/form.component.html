@@ -1,0 +1,13 @@
+<span class="mat-title">Categoria</span>
+<form [formGroup]="formGroup">
+  <div class="row">
+    <mat-form-field class="col-md-12">
+      <input type="text" matInput placeholder="Descricao" formControlName="descricao">
+    </mat-form-field>
+
+    <div class="col-md-12">
+      <button mat-raised-button class="op-btn" (click)="save()">Salvar</button>
+      <button mat-flat-button (click)="cancel()">Cancelar</button>
+    </div>
+  </div>
+</form>

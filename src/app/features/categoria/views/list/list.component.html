@@ -1,0 +1,36 @@
+<ts-filter [formModel]="filter" (onFilter)="onFilter($event)"></ts-filter>
+<div class="mat-elevation-z3" style="padding: 10px; background-color: #fff;">
+  <div style="margin: 5px 0;">
+    <button mat-raised-button class="op-btn" (click)="add()">Adicionar</button>
+    <button mat-raised-button class="op-btn" (click)="edit()">Editar</button>
+  </div>
+  <table mat-table [dataSource]="source$ | async">
+
+    <ng-container matColumnDef="select">
+      <th class="mat-selection" mat-header-cell *matHeaderCellDef>
+        <mat-checkbox [disabled]="true" [checked]="false">
+        </mat-checkbox>
+      </th>
+      <td class="mat-selection" mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element"> {{ element.descricao }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+  </table>
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[10, 20, 50, 100]"
+    (page)="page($event)" showFirstLastButtons>
+  </mat-paginator>
+</div>

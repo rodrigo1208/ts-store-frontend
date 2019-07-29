@@ -1,5 +1,4 @@
 {
-  "extends": "tslint:recommended",
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -18,7 +17,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "ts",
       "kebab-case"
     ],
     "import-blacklist": [

@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@import "~flexboxgrid/css/flexboxgrid.min.css";
+
+@include mat-core();
+
+$primary: mat-palette($mat-light-blue);
+$accent: mat-palette($mat-blue, 900);
+$warn: mat-palette($mat-red);
+
+$pallete: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($pallete);
+body {
+  margin: 0;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.op-btn {
+  margin-right: 10px !important;
+}
+
+.mat-selection {
+  width: 40px;
+}

@@ -1,0 +1,15 @@
+<div class="sidenav-background"></div>
+<div class="sidenav-logo">
+  <span class="logo">
+    <h1 style="color: #fff">TS</h1>
+  </span>
+</div>
+<div class="sidenav-buttons">
+  <div *ngFor="let btn of buttons" class="sidenav-button" (click)="btn.command.apply()">
+    <fa-icon [icon]="btn.icon"></fa-icon>
+  </div>
+</div>
+
+<div class="sidenav-button logout">
+  <fa-icon icon="door-open"></fa-icon>
+</div>

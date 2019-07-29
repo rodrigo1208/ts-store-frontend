@@ -1,0 +1,13 @@
+<div [ngClass]="{ '': allowBootstrap, 'fluid-bread': true}">
+  <div class="container">
+    <ol [ngClass]="{ 'breadcrumb': allowBootstrap}" class="{{addClass ? '' + addClass : ''}}">
+      <li *ngFor="let breadcrumb of breadcrumbs; let last = last"
+          [ngClass]="{ 'breadcrumb-item': allowBootstrap, 'list': true, 'active': last }">
+        <a *ngIf="!last" [routerLink]="hasParams(breadcrumb)">
+           <span *ngIf="isMiddle(breadcrumb)" class="bar">/</span> {{breadcrumb.label}}&nbsp;
+        </a>
+        <span *ngIf="last"><span *ngIf="isMiddle(breadcrumb)" class="bar">/</span> {{ breadcrumb.label }}</span>
+      </li>
+    </ol>
+  </div>
+</div>
